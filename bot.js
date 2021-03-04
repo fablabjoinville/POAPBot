@@ -12,6 +12,7 @@ const db = pgPromise()({
   user: process.env.DB_USER || "postgres",
   password: process.env.DB_PASSWORD || "postgres",
   database: process.env.DB_DATABASE || "",
+  ssl: true,
 });
 
 const logger = pino({
@@ -599,4 +600,4 @@ const readFile = async (url, uuid) => {
 
 //-------------------------------------------------------------------------------------------
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+client.login('ODE3MDQxNDg3MTYxMTk2NTk0.YEDvLg.IsQaKYzI2TyTl3tm3tBJOofXHyg');

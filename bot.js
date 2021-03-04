@@ -46,11 +46,10 @@ const steps = {
   FILE: "file",
 };
 
-const defaultStartMessage =
-  "The POAP distribution event is now active. *DM me to get your POAP*";
-const defaultEndMessage = "The POAP distribution event has ended.";
+const defaultStartMessage = "LIBERADO!!! :tada: :tada: :tada: \nMande a mensagem `{pass}` para mim no privado e te enviarei o link para você resgatar seu Emblema. \nNão sabe como resgatar? Siga o tutorial nesse link: http://bitly.ws/bXMz";
+const defaultEndMessage = "Acabou!! :disappointed_relieved: \nNão conseguiu pegar seu Emblema? Fique tranquilo, no próximo evento você terá mais uma chance :smile:";
 const defaultResponseMessage =
-  "Thanks for participating in the event. Here is a link where you can claim your POAP token: {code} ";
+  "Aqui está o link para você resgatar seu Emblema do evento: {code} \nObrigado por participar! :heart:";
 const instructions = ":warning: :warning: :warning: :warning: **You MUST send me a DIRECT MESSAGE with the code** :warning: :warning: :warning: :warning:  (click my name)"
 
 var state = {
@@ -225,7 +224,7 @@ const handleStepAnswer = async (message) => {
         answer = moment(state.event.start_date)
           .add(1, "h")
           .format("YYYY-MM-DD HH:mm");
-      
+
       state.event.end_date = answer;
       state.next = steps.RESPONSE;
       state.dm.send(
@@ -420,7 +419,8 @@ const startEventTimer = (event) => {
 const startEvent = async (event) => {
   logger.info(`[EVENT] started: ${JSON.stringify(event.server)}`);
   // Send the start message to the channel
-  sendMessageToChannel(event.server, event.channel, defaultStartMessage);
+  const startMessage = defaultStartMessage.replace("{pass}", event.pass)
+  sendMessageToChannel(event.server, event.channel, startMessage);
 
   // Set timer for event end
   const millisecs = getMillisecsUntil(event.end_date);

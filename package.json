@@ -4,8 +4,8 @@
   "version": "0.2.0",
   "main": "bot.js",
   "scripts": {
-    "start": "nodemon bot.js",
-    "start:heroku": "node bot.js"
+    "start": "node bot.js",
+    "start:local": "nodemon bot.js"
   },
   "dependencies": {
     "axios": "^0.20.0",

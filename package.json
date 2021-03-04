@@ -5,7 +5,8 @@
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "start:local": "nodemon bot.js"
+    "start:local": "nodemon bot.js",
+    "db": "node tables.js"
   },
   "dependencies": {
     "axios": "^0.20.0",

@@ -13,8 +13,8 @@ Example:
 
 ## Add @POAP-bot to your server.
 
-You can add to you discord server the @POAP-bot with this link:
-https://discord.com/api/oauth2/authorize?client_id=764554729476194315&permissions=2112&scope=bot
+You can add to you discord server the @Makers-POAP-bot with this link:
+https://discord.com/oauth2/authorize?client_id=817041487161196594&permissions=2112&scope=bot
 
 It will open the discord.com site in a browser page. Once the user signs in (which may happen automatically if credentials have been cached), they can select the guild in which the bot is to operate, and approve the bot's permissions in that guild.
 
